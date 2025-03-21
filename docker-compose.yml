@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   fastapi:
-    build: .
+    # build: .
     image: ernie123/app_fastapi:last
     ports:
       - "8000:8000"
