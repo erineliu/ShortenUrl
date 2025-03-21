@@ -12,9 +12,11 @@ curl -X POST -H "Content-Type: application/json" -d '{"original_url": "http://ex
 
 
 test for payload exceeds 2048:
+
 curl -X POST -H "Content-Type: application/json" -d "{\"original_url\": \"$(printf 'A%.os' {1..2050})\"}" http://localhost:8000/api/createShortUrl
 
 
 test for URL format error:
+
 curl -X POST -H "Content-Type: application/json" -d '{"original_url": "example.com"}' http://localhost:8000/api/createShortUrl
    
