@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  fastapi:
+    build: .
+    image: ernie123/app_fastapi:last
+    ports:
+      - "8000:8000"
+    environment:
+      REDIS_HOST: redis
+    depends_on:
+      - redis
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
